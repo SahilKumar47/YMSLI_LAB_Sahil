@@ -1,15 +1,17 @@
-package com.practice.assignment3.problem1;
+package com.practice.assignment3.problem2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class EmpRecSys {
+public class EmpInvSys {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		ArrayList<Employee> list = new ArrayList<Employee>();
+		ArrayList<Invoice> list2 = new ArrayList<Invoice>();
 		int ch = 5;
 		do {
-			System.out.println("1. Add Employee and rate 2. Display salary 3.increase rate 4. Exit");
+			System.out.println(
+					"1. Add Employee and rate 2. Display salary 3.increase rate 4.Add Invoice 5. Display Invoice 6. Exit");
 			int v = scanner.nextInt();
 			switch (v) {
 			case 1:
@@ -17,9 +19,9 @@ public class EmpRecSys {
 				System.out.println("1. Add Salary Employee 2. Hourly Employee 3. Commision Employee");
 				int val = scanner.nextInt();
 				System.out.println("Enter first name");
-				String firstName = scanner.next();
+				String firstName = scanner.nextLine();
 				System.out.println("Enter last name");
-				String lastName = scanner.next();
+				String lastName = scanner.nextLine();
 				System.out.println("Enter EIN");
 				int ein = scanner.nextInt();
 
@@ -83,6 +85,29 @@ public class EmpRecSys {
 
 				break;
 			case 4:
+				System.out.println("Enter the part Number");
+				String partNum = scanner.next();
+				System.out.println("Enter the part description");
+				String partDesc = scanner.next();
+				System.out.println("Enter quantity");
+				int quantity = scanner.nextInt();
+				System.out.println("Enter price per item");
+				double pricePerItem = scanner.nextDouble();
+				Invoice invoice = new Invoice(partNum, partDesc, quantity, pricePerItem);
+				list2.add(invoice);
+				break;
+			case 5:
+				if (list2.size() < 1)
+					System.out.println("No records found");
+				else {
+					for (Invoice inv : list2) {
+						double payment = inv.getPayment();
+						System.out.println(inv);
+						System.out.println("Total Payment: " + payment);
+					}
+				}
+				break;
+			case 6:
 				ch = 0;
 				break;
 			default:
