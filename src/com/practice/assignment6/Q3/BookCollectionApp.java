@@ -84,8 +84,8 @@ class BookCollection {
 		}
 	}
 
-	public void sort() {
-		List<Book> aList = new ArrayList<Book>();
+	public void sort() {// change it to sortedSet
+		List<Book> aList = new ArrayList<Book>(); 
 		for (Book x : books)
 			aList.add(x);
 		Collections.sort(aList);
@@ -99,7 +99,7 @@ public class BookCollectionApp {
 	public static void main(String[] args) {
 		HashSet<Book> books = new HashSet<>();
 		// Books
-		books.add(new Book("Java in depth", "john"));
+		books.add(new Book("Java in depth", "john")); 
 		books.add(new Book("Tales of horizon", "jane"));
 		books.add(new Book("Get started with C++", "mike"));
 		books.add(new Book("Python for beginners", "rayan"));
@@ -107,5 +107,5 @@ public class BookCollectionApp {
 		bookCollection.hasBook(new Book("Java in depth", "john"));
 		System.out.println(bookCollection);
 		bookCollection.sort();
-	}
+	} 
 }

@@ -9,8 +9,7 @@ public class MaxData {
 	public static void main(String[] args) {
 		File file = new File("data.txt");
 		double res = 0.0;
-		try {
-			Scanner scanner = new Scanner(file);
+		try(Scanner scanner = new Scanner(file);) {
 			
 			while(scanner.hasNextDouble()) {
 				double data = scanner.nextDouble();
