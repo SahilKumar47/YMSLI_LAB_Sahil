@@ -36,9 +36,8 @@ class Employee implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }
-
+ 
 public class SerializeEmp {
 	public static void main(String[] args) {
 		Employee employee = new Employee("Sahil", "YM269", 50000);
@@ -56,3 +55,7 @@ public class SerializeEmp {
 		}
 	}
 }
+
+
+
+
