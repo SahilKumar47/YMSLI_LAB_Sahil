@@ -1,4 +1,4 @@
-package com.test2.Q2;
+package com.test2.multithreading;
 
 import java.util.Random;
 
